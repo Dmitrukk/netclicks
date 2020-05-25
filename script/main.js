@@ -23,3 +23,14 @@ leftMenu.addEventListener('click', () => {
         hamburger.classList.add('open');
     }
 });
+
+const switchImage = (src) => {
+    document.querySelectorAll('.tv-card__img').forEach((el) => {
+      el.addEventListener('mouseenter', () => {
+        src = el.src;
+        el.src = el.getAttribute('data-backdrop');
+      })
+      el.addEventListener('mouseleave', () => {el.src = src});
+    });
+  }
+  switchImage();
